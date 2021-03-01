@@ -25,6 +25,18 @@ Add this Bucket policy below. Make sure you're only uploading files that you wan
     ]
 }
 ```
+- Heroku is another common way of deploying. I think it's a little more complicated. Here's how you should go about it
+    - Get an [Heroku Account](https://github.com/mars/create-react-app-buildpack#user-content-requires) account and install the cli
+    - Go into your react project and at the root of your project, run below. Make sure to rename `$APP_NAME` to your project folder name
+
+        ```heroku create $APP_NAME --buildpack mars/create-react-app```
+    - If the "homepage" key exists in your package.json, delete that whole line.
+    - This assumes you already have your code on github.
+    - Run this to have heroku as a remote repository `heroku git:remote -a $APP_NAME`
+    - Once you've made all your changes, run `git add .` and `git commit -m "describe changes you made here"`
+    - Push it to heroku `git push heroku main`
+    - You can also follow this [tutorial](https://www.geeksforgeeks.org/how-to-deploy-react-app-to-heroku/).
+
 
 ## github-pages
 Things to Note
